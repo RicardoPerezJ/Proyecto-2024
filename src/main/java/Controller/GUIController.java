@@ -192,6 +192,8 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu.getFramelaberinto().setVisible(false);
                 frameMenu.getFrameGanar().setVisible(false);
                 frameMenu.getFramePerderd().setVisible(false);
+                frameMenu.setVisible(false);
+                frameMenu = null;
 
                 frameMenu = new FrameMenu();
                 frameMenu.setVisible(true);
