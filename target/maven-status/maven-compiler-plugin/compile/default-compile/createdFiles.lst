@@ -1,4 +1,5 @@
 Model\Enemigo.class
+View\FrameGanar.class
 ucr\ac\cr\tm2100g3\experiment\film\ExperimentFILM.class
 View\FrameInstrucciones.class
 Controller\Personajes.class
@@ -12,5 +13,6 @@ View\FrameHistoria.class
 Model\Premio.class
 Model\Protagonista.class
 View\FrameLaberinto.class
+View\FramePerderd.class
 View\FrameMenu$3.class
 Controller\GUIController.class

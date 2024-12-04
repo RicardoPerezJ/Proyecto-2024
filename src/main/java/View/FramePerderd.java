@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.event.KeyListener;
+
 /**
  *
  * @author Ricardo
@@ -30,7 +32,9 @@ public class FramePerderd extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1080, 720));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -46,6 +50,12 @@ public class FramePerderd extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public void keyListener(KeyListener key){
+        jLabel2.addKeyListener(key);
+        jLabel1.addKeyListener(key);
+        this.addKeyListener(key);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

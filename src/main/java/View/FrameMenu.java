@@ -15,6 +15,9 @@ public class FrameMenu extends javax.swing.JFrame {
     private FrameHistoria frameHistoria;
     private FrameLaberinto frameLaberinto;
     private FrameInstrucciones frameInstrucciones;
+    
+    private FrameGanar frameGanar;
+    private FramePerderd framePerderd;
 
     /**
      * Creates new form FrameMenu
@@ -25,6 +28,9 @@ public class FrameMenu extends javax.swing.JFrame {
         frameHistoria = new FrameHistoria();
         frameLaberinto = new FrameLaberinto();
         frameInstrucciones = new FrameInstrucciones();
+        
+        frameGanar = new FrameGanar();
+        framePerderd = new FramePerderd();
     }
 
     public void setFrameHistoria(FrameHistoria frameHistoria) {
@@ -37,6 +43,23 @@ public class FrameMenu extends javax.swing.JFrame {
 
     public void setFrameInstrucciones(FrameInstrucciones frameInstrucciones) {
         this.frameInstrucciones = frameInstrucciones;
+    }
+
+    public FramePerderd getFramePerderd() {
+        return framePerderd;
+    }
+
+    public void setFramePerderd(FramePerderd framePerderd) {
+        this.framePerderd = framePerderd;
+    }
+    
+
+    public FrameGanar getFrameGanar() {
+        return frameGanar;
+    }
+
+    public void setFrameGanar(FrameGanar frameGanar) {
+        this.frameGanar = frameGanar;
     }
     
     

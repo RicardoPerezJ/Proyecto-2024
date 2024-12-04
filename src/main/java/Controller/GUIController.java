@@ -83,7 +83,6 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu = new FrameMenu();
                 frameMenu.setVisible(true);
                 frameMenu.listenerButton(this);
-                
 
                 break;
 
@@ -104,9 +103,21 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getAtras());
                 frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                
+                frameMenu.getFramelaberinto().repaint();
 
-                
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
+                    this.frameMenu.getFrameGanar().keyListener(this);
+
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFrameGanar().setVisible(true);
+                    frameMenu.getFrameGanar().setFocusable(true);
+                }
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isPerder() == true) {
+                    this.frameMenu.getFramePerderd().keyListener(this);
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFramePerderd().setVisible(true);
+                    frameMenu.getFramePerderd().setFocusable(true);
+                }
             }
             case KeyEvent.VK_DOWN -> {
                 dy = 1;
@@ -114,8 +125,21 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getFrente());
                 frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                
+                frameMenu.getFramelaberinto().repaint();
 
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
+                    this.frameMenu.getFrameGanar().keyListener(this);
+
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFrameGanar().setVisible(true);
+                    frameMenu.getFrameGanar().setFocusable(true);
+                }
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isPerder() == true) {
+                    this.frameMenu.getFramePerderd().keyListener(this);
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFramePerderd().setVisible(true);
+                    frameMenu.getFramePerderd().setFocusable(true);
+                }
             }
             case KeyEvent.VK_LEFT -> {
                 dx = -1;
@@ -123,7 +147,21 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getIzquierda());
                 frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                
+                frameMenu.getFramelaberinto().repaint();
+
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
+                    this.frameMenu.getFrameGanar().keyListener(this);
+
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFrameGanar().setVisible(true);
+                    frameMenu.getFrameGanar().setFocusable(true);
+                }
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isPerder() == true) {
+                    this.frameMenu.getFramePerderd().keyListener(this);
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFramePerderd().setVisible(true);
+                    frameMenu.getFramePerderd().setFocusable(true);
+                }
             }
             case KeyEvent.VK_RIGHT -> {
                 dx = 1;
@@ -131,7 +169,34 @@ public class GUIController implements ActionListener, KeyListener {
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getDerecha());
                 frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
                 frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                
+                frameMenu.getFramelaberinto().repaint();
+
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
+                    this.frameMenu.getFrameGanar().keyListener(this);
+
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFrameGanar().setVisible(true);
+                    frameMenu.getFrameGanar().setFocusable(true);
+                }
+                if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isPerder() == true) {
+                    this.frameMenu.getFramePerderd().keyListener(this);
+                    frameMenu.getFramelaberinto().setVisible(false);
+                    frameMenu.getFramePerderd().setVisible(true);
+                    frameMenu.getFramePerderd().setFocusable(true);
+                }
+            }
+            case KeyEvent.VK_SPACE -> {
+
+                frameMenu.historiaPanel().setVisible(false);
+                frameMenu.instruccionesPanel().setVisible(false);
+                frameMenu.getFramelaberinto().setVisible(false);
+                frameMenu.getFrameGanar().setVisible(false);
+                frameMenu.getFramePerderd().setVisible(false);
+
+                frameMenu = new FrameMenu();
+                frameMenu.setVisible(true);
+                frameMenu.listenerButton(this);
+
             }
 
         }

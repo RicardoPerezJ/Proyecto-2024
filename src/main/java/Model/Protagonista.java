@@ -17,8 +17,12 @@ public class Protagonista {
     ImageIcon prota;
 
     String atras, frente, derecha, izquierda;
+    
+    private boolean estado, perder;
 
     public Protagonista(int x, int y) {
+        
+        
         
         vida = 3;
 
@@ -39,6 +43,24 @@ public class Protagonista {
     public void setVida(int vida) {
         this.vida = vida;
     }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public boolean isPerder() {
+        return perder;
+    }
+
+    public void setPerder(boolean perder) {
+        this.perder = perder;
+    }
+    
+    
     
 
     public String getAtras() {
@@ -109,10 +131,16 @@ public class Protagonista {
         int valorMatriz = new Bounds().getLimites()[getY() + y][getX() + x];
        // System.out.println("x: " + this.x + "y: " + this.y); //Para comprobar la posicion en consola
         //System.out.println(valorMatriz);
-
-        if (valorMatriz == 0) { //Si la casilla es 0 se actualiza su posicion
+        
+        if (valorMatriz == 0 || valorMatriz == 2) { //Si la casilla es 0 se actualiza su posicion
             setX(getX()+x);
             setY(getY()+y);
+            
+            if (valorMatriz == 2) {
+                setEstado(true);
+            }if (getVida() <= 0) {
+                setPerder(true);
+            }
         }
 
     }
