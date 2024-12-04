@@ -41,9 +41,10 @@ public class FrameMenu extends javax.swing.JFrame {
     
     
 
-    public FrameLaberinto playPanel() {
+    public FrameLaberinto getFramelaberinto() {
         return this.frameLaberinto;
     }
+    
     
     public FrameInstrucciones instruccionesPanel (){
         return this.frameInstrucciones;
@@ -60,7 +61,7 @@ public class FrameMenu extends javax.swing.JFrame {
         this.salirButton.addActionListener(listener);
         this.historiaPanel().listenerButton(listener);
         this.instruccionesPanel().listenerButton(listener);
-        this.playPanel().listenerButton(listener);
+        this.getFramelaberinto().listenerButton(listener);
         
     }
 

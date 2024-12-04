@@ -25,6 +25,7 @@ public class FrameLaberinto extends javax.swing.JFrame {
 
     public FrameLaberinto() {
         initComponents();
+
     }
 
     public Laberinto getLaberinto1() {
@@ -42,13 +43,11 @@ public class FrameLaberinto extends javax.swing.JFrame {
     public void setMensajesLabel(JLabel mensajesLabel) {
         this.mensajesLabel = mensajesLabel;
     }
-    
-    
-
 
     public Laberinto panelLab() {
         return this.laberinto1;
     }
+    
 
     public void listenerButton(ActionListener listener) {
         this.regresarButton.addActionListener(listener);
@@ -57,6 +56,8 @@ public class FrameLaberinto extends javax.swing.JFrame {
     public void listenKey(KeyListener listener) {
         panelLab().addKeyListener(listener);
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.

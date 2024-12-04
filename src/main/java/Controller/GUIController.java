@@ -24,20 +24,19 @@ public class GUIController implements ActionListener, KeyListener {
 
     private FrameMenu frameMenu;
     private Personajes personajes;
-    private Laberinto laberinto;
+    private FrameLaberinto laberinto;
 
     public GUIController() {
 
         frameMenu = new FrameMenu();
 
-        laberinto = new Laberinto();
+        laberinto = frameMenu.getFramelaberinto();
 
         personajes = new Personajes();
 
         frameMenu.setVisible(true);
 
         this.frameMenu.listenerButton(this);
-        this.frameMenu.playPanel().listenKey(this);
 
     }
 
@@ -54,9 +53,12 @@ public class GUIController implements ActionListener, KeyListener {
 
         switch (e.getActionCommand()) {
             case "Play":
-                frameMenu.playPanel().setVisible(true);
+                frameMenu.setFrameLaberinto(new FrameMenu().getFramelaberinto());
+                this.frameMenu.listenerButton(this);
+                frameMenu.getFramelaberinto().listenKey(this);
+                frameMenu.getFramelaberinto().setVisible(true);
                 frameMenu.setVisible(false);
-                frameMenu.playPanel().panelLab().setFocusable(true);
+                frameMenu.getFramelaberinto().panelLab().setFocusable(true);
                 break;
 
             case "Instrucciones":
@@ -76,9 +78,12 @@ public class GUIController implements ActionListener, KeyListener {
             case "Regresar":
                 frameMenu.historiaPanel().setVisible(false);
                 frameMenu.instruccionesPanel().setVisible(false);
-                frameMenu.playPanel().setVisible(false);
+                frameMenu.getFramelaberinto().setVisible(false);
 
+                frameMenu = new FrameMenu();
                 frameMenu.setVisible(true);
+                frameMenu.listenerButton(this);
+                
 
                 break;
 
@@ -96,37 +101,37 @@ public class GUIController implements ActionListener, KeyListener {
 
             case KeyEvent.VK_UP -> {
                 dy = -1;
-                frameMenu.playPanel().panelLab().getProtagonista().setProta(frameMenu.playPanel().panelLab().getProtagonista().getAtras());
-                frameMenu.playPanel().getMensajesLabel().setText(frameMenu.playPanel().panelLab().getTxt());
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getAtras());
+                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                
 
-                frameMenu.playPanel().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.playPanel().panelLab().repaint();
-
+                
             }
             case KeyEvent.VK_DOWN -> {
                 dy = 1;
 
-                frameMenu.playPanel().panelLab().getProtagonista().setProta(frameMenu.playPanel().panelLab().getProtagonista().getFrente());
-                frameMenu.playPanel().getMensajesLabel().setText(frameMenu.playPanel().panelLab().getTxt());
-                frameMenu.playPanel().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.playPanel().repaint();
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getFrente());
+                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                
 
             }
             case KeyEvent.VK_LEFT -> {
                 dx = -1;
 
-                frameMenu.playPanel().panelLab().getProtagonista().setProta(frameMenu.playPanel().panelLab().getProtagonista().getIzquierda());
-                frameMenu.playPanel().getMensajesLabel().setText(frameMenu.playPanel().panelLab().getTxt());
-                frameMenu.playPanel().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.playPanel().repaint();
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getIzquierda());
+                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                
             }
             case KeyEvent.VK_RIGHT -> {
                 dx = 1;
 
-                frameMenu.playPanel().panelLab().getProtagonista().setProta(frameMenu.playPanel().panelLab().getProtagonista().getDerecha());
-                frameMenu.playPanel().getMensajesLabel().setText(frameMenu.playPanel().panelLab().getTxt());
-                frameMenu.playPanel().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.playPanel().repaint();
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getDerecha());
+                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                
             }
 
         }

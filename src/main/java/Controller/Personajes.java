@@ -5,6 +5,7 @@
 package Controller;
 
 import Model.Bounds;
+import Model.Corazones;
 import Model.Enemigo;
 import Model.Premio;
 import Model.Protagonista;
@@ -19,6 +20,7 @@ public class Personajes {
     private Bounds bounds;
     private Enemigo enemigo;
     private Premio premio;
+    private Corazones corazones;
 
     public Personajes() {
         bounds = new Bounds();
@@ -27,7 +29,18 @@ public class Personajes {
         premio = new Premio();
 
         enemigo = new Enemigo();
+        corazones = new Corazones();
     }
+
+    public Corazones getCorazones() {
+        return corazones;
+    }
+
+    public void setCorazones(Corazones corazones) {
+        this.corazones = corazones;
+    }
+    
+    
 
     public Bounds getBounds() {
         return bounds;
