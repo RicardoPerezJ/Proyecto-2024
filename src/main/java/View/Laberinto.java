@@ -152,7 +152,7 @@ public class Laberinto extends javax.swing.JPanel implements Runnable {
      */
     @Override
     protected void paintComponent(Graphics g) {
-        int size = 34;
+        int size = 32;
 
         super.paintComponents(g);
         int indiceImg = 0;
@@ -161,7 +161,7 @@ public class Laberinto extends javax.swing.JPanel implements Runnable {
         } else {
             arregloImagenes[2] = new ImageIcon("./src/main/resources/muroo.png");
         }
-        for (var y = 0; y < laberinto.getLimites().length; y++) {
+        for (int y = 0; y < laberinto.getLimites().length; y++) {
             for (int x = 0; x < laberinto.getLimites()[y].length; x++) {
                 indiceImg = laberinto.getLimites()[y][x];
                 g.drawImage(arregloImagenes[indiceImg].getImage(), x * size, y * size, size, size, this);

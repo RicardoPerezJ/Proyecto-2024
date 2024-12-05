@@ -99,12 +99,15 @@ public class GUIController implements ActionListener, KeyListener {
         switch (e.getKeyCode()) {
 
             case KeyEvent.VK_UP -> {
-                dy = -1;
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getAtras());
-                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.getFramelaberinto().repaint();
 
+                
+                    dy = -1;
+
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getAtras());
+                    frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                    frameMenu.getFramelaberinto().repaint();
+                
                 if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
                     this.frameMenu.getFrameGanar().keyListener(this);
 
@@ -120,13 +123,15 @@ public class GUIController implements ActionListener, KeyListener {
                 }
             }
             case KeyEvent.VK_DOWN -> {
-                dy = 1;
 
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getFrente());
-                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.getFramelaberinto().repaint();
+                
+                    dy = 1;
 
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getFrente());
+                    frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                    frameMenu.getFramelaberinto().repaint();
+                
                 if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
                     this.frameMenu.getFrameGanar().keyListener(this);
 
@@ -142,13 +147,15 @@ public class GUIController implements ActionListener, KeyListener {
                 }
             }
             case KeyEvent.VK_LEFT -> {
-                dx = -1;
 
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getIzquierda());
-                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.getFramelaberinto().repaint();
+                
+                    dx = -1;
 
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getIzquierda());
+                    frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                    frameMenu.getFramelaberinto().repaint();
+                
                 if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
                     this.frameMenu.getFrameGanar().keyListener(this);
 
@@ -164,12 +171,15 @@ public class GUIController implements ActionListener, KeyListener {
                 }
             }
             case KeyEvent.VK_RIGHT -> {
-                dx = 1;
 
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getDerecha());
-                frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
-                frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
-                frameMenu.getFramelaberinto().repaint();
+                
+                    dx = 1;
+
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().setProta(frameMenu.getFramelaberinto().panelLab().getProtagonista().getDerecha());
+                    frameMenu.getFramelaberinto().getMensajesLabel().setText(frameMenu.getFramelaberinto().panelLab().getTxt());
+                    frameMenu.getFramelaberinto().panelLab().getProtagonista().mover(dx, dy);
+                    frameMenu.getFramelaberinto().repaint();
+                
 
                 if (frameMenu.getFramelaberinto().panelLab().getProtagonista().isEstado() == true) {
                     this.frameMenu.getFrameGanar().keyListener(this);
